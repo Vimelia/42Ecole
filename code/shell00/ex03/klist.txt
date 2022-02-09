@@ -1,0 +1,5 @@
+Credentials cache: API:1268FE65-8923-4157-89F5-10DDBEBF70F4
+        Principal: vdegirme@42KOCAELI.COM.TR
+
+  Issued                Expires               Principal
+Feb  9 20:04:42 2022  Feb 10 06:04:42 2022  krbtgt/42KOCAELI.COM.TR@42KOCAELI.COM.TR
