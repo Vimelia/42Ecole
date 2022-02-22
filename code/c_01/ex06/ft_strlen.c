@@ -6,13 +6,13 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 10:45:20 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/02/21 10:41:05 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/02/22 19:52:01 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
