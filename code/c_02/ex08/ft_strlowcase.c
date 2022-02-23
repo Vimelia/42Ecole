@@ -6,20 +6,20 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:30:44 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/02/22 11:30:47 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/02/23 19:48:01 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
+		if (str[i] >= 'A' && str[i] <= 'Z')
 		{
-			str[i] -= 32;
+			str[i] += 32;
 		}
 		i++;
 	}

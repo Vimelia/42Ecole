@@ -6,7 +6,7 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 01:51:46 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/02/22 03:43:56 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/02/23 19:26:13 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,11 @@ int	ft_str_is_alpha(char *str)
 	int	i;
 
 	i = 0;
-	if (str[i] == '\0' )
-	{
-		return (1);
-	}
 	while (str[i] != '\0')
 	{
-		if ((str[i] >= 'A' && str[i] <= 'Z')
-			|| (str[i] >= 'a' && str[i] <= 'z'))
-		{
-			i++;
-		}
-		else
+		if ((str[i] < 'A') || (str[i] > 'Z' && str[i] < 'a') || (str[i] > 'z'))
 			return (0);
+		i++;
 	}
 	return (1);
 }

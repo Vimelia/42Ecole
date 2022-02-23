@@ -6,7 +6,7 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 12:21:20 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/02/22 12:40:12 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/02/23 19:51:54 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strcapitalize(char *str)
 	ft_strlowcase(str);
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 'a' && str[i] <= '9')
+		if (str[i] >= 'a' && str[i] <= 'z')
 		{
 			if (ii == 1)
 				str[i] -= 32;
