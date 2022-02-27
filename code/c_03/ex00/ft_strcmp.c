@@ -6,16 +6,16 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 20:29:20 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/02/22 20:32:21 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/02/27 17:33:08 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	c;
+	unsigned int	c;
 
 	c = 0;
-	while ((s1[c] == s2[c]) && (s1[c] != '\0') && (s2[c] != '\0'))
+	while ((s1[c] == s2[c]) && (s1[c] != '\0' || s2[c] != '\0'))
 		c++;
 	return (s1[c] - s2[c]);
 }

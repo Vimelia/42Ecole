@@ -6,7 +6,7 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 22:18:20 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/02/23 22:22:50 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/02/27 17:55:50 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 	n = 0;
 	a = 0;
-	while (dest[n])
+	while (dest[n] != '\0')
 		n++;
-	while (src[a] && nb-- != 0)
-		dest[n++] = src[a++];
+	while (src[a] != '\0' && a < nb)
+	{
+		dest[n] = src[a];
+		a++;
+		n++;
+	}
 	dest[n] = '\0';
 	return (dest);
 }
