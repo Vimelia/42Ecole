@@ -6,11 +6,10 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 22:18:20 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/02/28 15:58:38 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/02/28 17:49:34 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	a;
@@ -24,14 +23,6 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	{
 		dest[a++] = src[b++];
 	}
-	dest[n] = '\0';
+	dest[a] = '\0';
 	return (dest);
-}
-
-int main()
-{
-	char src[] = "Network";
-	char dest[] = "42";
-	printf("%s", ft_strncat(dest, src, 7);
-	return 0;
 }
