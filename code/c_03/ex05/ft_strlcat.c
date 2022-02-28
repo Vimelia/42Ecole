@@ -6,7 +6,7 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 00:44:04 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/02/27 19:41:14 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/02/28 15:51:40 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,27 @@ unsigned int	ft_strlen(char *str)
 	unsigned int	i;
 
 	i = 0;
-	while (str[i])
+	while (*str != '\0')
+	{
 		i++;
+		str++;
+	}
 	return (i);
 }
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
+	unsigned int	a;
 	unsigned int	i;
-	unsigned int	srclen;
-	unsigned int	destlen;
 
-	srclen = ft_strlen(src);
-	if (size == 0)
-		return (srclen);
-	destlen = 0;
-	while (dest[destlen])
-		destlen++;
+	if (size <= ft_strlen(dest))
+		return (size + ft_strlen(src));
+	a = ft_strlen(dest);
 	i = 0;
-	while (src[i] && (i < (size - 1)))
+	while (src[i] != '\0' && a + 1 < size)
 	{
-		dest[i + destlen] = src[i];
-		i++;
+		dest[a++] = src[i];
 	}
-	if (i < size)
-		dest[destlen + i] = '\0';
-	if (destlen > size)
-		return (destlen + size);
-	return (destlen + srclen);
+	dest[a] = '\0';
+	return (ft_strlen(dest) + ft_strlen(&src[i]));
 }
