@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 20:39:14 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/02/28 18:32:52 by vdegirme         ###   ########.tr       */
+/*   Created: 2022/03/01 03:31:12 by vdegirme          #+#    #+#             */
+/*   Updated: 2022/03/01 03:36:28 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+int	ft_is_prime(int nb)
 {
-	int	n;
-	int	a;
+	int	b;
 
-	n = 0;
-	a = 0;
-	while (dest[n])
-		n++;
-	while (src[a])
-		dest[n++] = src[a++];
-	dest[n] = '\0';
-	return (dest);
+	b = 2;
+	while (b < nb)
+	{
+		if (nb % b == 0)
+			return (0);
+		b++;
+	}
+	return (1);
+}
+
+int	ft_find_next_prime(int nb)
+{
+	if (nb <= 2)
+		return (2);
+	while (nb < 2147483647 && ft_is_prime(nb))
+		nb++;
+	return (nb);
 }

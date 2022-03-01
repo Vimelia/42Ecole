@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 20:39:14 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/02/28 18:32:52 by vdegirme         ###   ########.tr       */
+/*   Created: 2022/03/01 03:18:53 by vdegirme          #+#    #+#             */
+/*   Updated: 2022/03/01 03:26:44 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+int	ft_sqrt(int nb)
 {
-	int	n;
 	int	a;
 
-	n = 0;
-	a = 0;
-	while (dest[n])
-		n++;
-	while (src[a])
-		dest[n++] = src[a++];
-	dest[n] = '\0';
-	return (dest);
+	if (nb == 1)
+		return (1);
+	else if (nb > 1)
+	{
+		a = 0;
+		while (a < nb && a < 46341)
+		{
+			if (a * a == nb)
+				return (a);
+			a++;
+		}
+	}
+	return (0);
 }

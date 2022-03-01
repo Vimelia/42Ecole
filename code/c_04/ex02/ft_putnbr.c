@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 20:39:14 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/02/28 18:32:52 by vdegirme         ###   ########.tr       */
+/*   Created: 2022/02/28 22:50:46 by vdegirme          #+#    #+#             */
+/*   Updated: 2022/03/01 03:50:41 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
-{
-	int	n;
-	int	a;
+#include <unistd.h>
 
-	n = 0;
-	a = 0;
-	while (dest[n])
-		n++;
-	while (src[a])
-		dest[n++] = src[a++];
-	dest[n] = '\0';
-	return (dest);
+void	ft_putchar(char a)
+{
+	write(1, &a, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		nb = 147483648;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb *= -1;
+	}
+	if (nb < 10)
+	{
+		ft_putchar(nb + 48);
+		return ;
+	}
+	else
+		ft_putnbr(nb / 10);
+	ft_putnbr(nb % 10);
 }
