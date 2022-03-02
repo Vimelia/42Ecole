@@ -6,7 +6,7 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 23:07:43 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/03/02 05:19:51 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/03/02 18:41:11 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ int	main(int ac, char **ar)
 	int	i;
 
 	i = 0;
-	if (ac == 1)
+	while (ar[0][i] != '\0')
 	{
-		while (ar[0][i] != '\0')
-		{
-			write(1, &ar[0][i], 1);
-			i++;
-		}
+		write(1, &ar[0][i], 1);
+		i++;
 	}
+	write(1, "\n", 1);
 }

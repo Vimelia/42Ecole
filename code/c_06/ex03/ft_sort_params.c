@@ -5,73 +5,74 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 05:21:21 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/03/02 13:12:09 by vdegirme         ###   ########.tr       */
+/*   Created: 2022/03/02 15:53:42 by vdegirme          #+#    #+#             */
+/*   Updated: 2022/03/02 18:33:27 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_swap(char **a, char **b)
-{
-	char *tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
 void	ft_putstr(char *str)
 {
-	int	i;
+	int	e;
 
-	i = 0;
-	while (str[i] != '\0')
-		ft_putchar(str[i++];
+	e = 0;
+	while (str[e] != '\0')
+	{
+		write(1, &str[e], 1);
+		e++;
+	}
 }
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
+	int	e;
 
-	i = 0;
-	while (s1[i] || s2[i])
+	e = 0;
+	while (s1[e] != '\0' || s2[e] != '\0')
 	{
-		if (s1[i] < s2[i] || (s1[i] > s2[i])
-			return (s1[i] - s2[i]);
+		if (s1[e] == s2[e])
+			e++;
+		if (s1[e] < s2[e] || s1[e] > s2[e])
+			return (s1[e] - s2[e]);
 	}
 	return (0);
 }
 
-int	main(int f, char *ff)
+void	ft_swap(char **x, char **y)
 {
-	int i;
-	char *a;
-	char *b;
+	char	*k;
 
-	i = f - 1;
-	while(ff[i][1] != '\0' && i > 0)
+	k = *x;
+	*x = *y;
+	*y = k;
+}
+
+int	main(int size, char **arg)
+{
+	int	e;
+	int	d;
+
+	d = 1;
+	while (d < size -1)
 	{
-		a = ff[i][1];
-		j = i - 1;
-		while(ff[j][1])
+		e = 1;
+		while (e < size -1)
 		{
-			b = ff[j][1];
-			if(ft_strcmp(a,b) >	0)
-				ft_swap(&a, &b);
-			j--;
+			if (ft_strcmp(arg[e], arg[e + 1]) > 0)
+			{
+				ft_swap(&arg[e], &arg[e + 1]);
+			}
+			e++;
 		}
-		i--;
+		d++;
 	}
-	while (i < f)
+	e = 1;
+	while (e < size)
 	{
-		ft_putstr(ff[i]);
-		i++;
+		ft_putstr(arg[e]);
+		write(1, "\n", 1);
+		e++;
 	}
 	return (0);
 }
