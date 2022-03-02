@@ -6,7 +6,7 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 01:43:28 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/03/01 01:45:55 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/03/01 21:19:43 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ int	ft_iterative_power(int nb, int power)
 		return (1);
 	else if (power < 0)
 		return (0);
-	while (a < power)
-	{
+	while (a++ < power)
 		b *= nb;
-		a++;
-	}
 	return (b);
 }

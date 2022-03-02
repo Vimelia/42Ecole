@@ -6,11 +6,9 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 23:39:43 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/03/01 01:38:24 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/03/01 21:49:17 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_iterative_factorial(int nb)
 {

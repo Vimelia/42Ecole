@@ -6,29 +6,29 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 03:31:12 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/03/01 03:36:28 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/03/01 22:23:22 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_is_prime(int nb)
 {
-	int	b;
+	int	e;
 
-	b = 2;
-	while (b < nb)
+	e = 2;
+	if (nb < 2)
+		return (0);
+	while (e <= (nb / 2))
 	{
-		if (nb % b == 0)
+		if (nb % e == 0)
 			return (0);
-		b++;
+		e++;
 	}
 	return (1);
 }
 
 int	ft_find_next_prime(int nb)
 {
-	if (nb <= 2)
-		return (2);
-	while (nb < 2147483647 && ft_is_prime(nb))
+	while (nb < 2147483647 && !ft_is_prime(nb))
 		nb++;
 	return (nb);
 }
