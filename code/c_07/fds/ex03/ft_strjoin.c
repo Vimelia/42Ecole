@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 23:07:43 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/03/02 18:41:11 by vdegirme         ###   ########.tr       */
+/*   Created: 2022/03/02 21:02:08 by vdegirme          #+#    #+#             */
+/*   Updated: 2022/03/03 17:10:10 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int	main(int argc, char *argv[])
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	int	i;
+	char	*s;
+	int		i;
+	int		j;
+	int		c;
 
+	s = malloc(sizeof(strs));
 	i = 0;
-	while (argv[0][i] != '\0' && argc)
+	c = 0;
+	while (i < size)
 	{
-		write(1, &argv[0][i], 1);
+		j = 0;
+		while (strs[i][j] != '\0')
+		{
+			s[c++] = strs[i][j++];
+		}
+		j = 0;
+		while (sep[j] != '\0' && i != size - 1)
+			s[c++] = sep[j++];
 		i++;
 	}
-	write(1, "\n", 1);
+	s[c] = '\0';
+	return (s);
 }

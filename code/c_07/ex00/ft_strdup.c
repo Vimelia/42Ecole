@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 23:07:43 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/03/02 18:41:11 by vdegirme         ###   ########.tr       */
+/*   Created: 2022/03/02 20:35:07 by vdegirme          #+#    #+#             */
+/*   Updated: 2022/03/03 17:09:42 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
-int	main(int argc, char *argv[])
+char	*ft_strdup(char *src)
 {
-	int	i;
+	char	*ptr;
+	int		n;
 
-	i = 0;
-	while (argv[0][i] != '\0' && argc)
+	n = 0;
+	while (src[n])
+		n++;
+	ptr = malloc(sizeof(char) * n + 1);
+	if (!ptr)
+		return (NULL);
+	n = 0;
+	while (src[n] != '\0')
 	{
-		write(1, &argv[0][i], 1);
-		i++;
+		*(ptr + n) = *(src + n);
+		n++;
 	}
-	write(1, "\n", 1);
+	ptr[n] = '\0';
+	return (ptr);
 }

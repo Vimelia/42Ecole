@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 23:07:43 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/03/02 18:41:11 by vdegirme         ###   ########.tr       */
+/*   Created: 2022/03/02 20:57:23 by vdegirme          #+#    #+#             */
+/*   Updated: 2022/03/02 21:01:02 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int	main(int argc, char *argv[])
+int	ft_ultimate_range(int **range, int min, int max)
 {
+	int	*tab;
 	int	i;
 
-	i = 0;
-	while (argv[0][i] != '\0' && argc)
+	if (min >= max)
 	{
-		write(1, &argv[0][i], 1);
-		i++;
+		*range = NULL;
+		return (0);
 	}
-	write(1, "\n", 1);
+	tab = malloc(sizeof(int) * (max - min));
+	if (tab == NULL)
+		return (-1);
+	else
+	{
+		i = 0;
+		while (i < max - min)
+		{
+			tab[i] = min + i;
+			i++;
+		}
+		*range = tab;
+		return (i);
+	}
 }
