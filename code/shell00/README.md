@@ -10,7 +10,8 @@ Küme - a
 Patch 
 B 2 4 5 5 6
 
-patch,bir liste halinde iki dosya arasındaki farklılıkları barındıran bir metin dosyasıdır. ve diff programı ile özgün ve yeni dosya karşılaştırılarak oluşturulur.
+patch,bir liste halinde iki dosya arasındaki farklılıkları barındıran bir metin dosyasıdır. 
+ve diff programı ile özgün ve yeni dosya karşılaştırılarak oluşturulur.
 
 ------------------------------------------------------------------------------
  pwd dosya yolu gösterir
@@ -43,7 +44,7 @@ Echo text >> .gitignore
 
 ------------------------------------------------------------------------
 
-Header
+##Header
 Users kısmında mkdir .vim yapıcaksın
 Open .vim yapacaksın
 Plugin’i vim’e ekliyorsun
@@ -55,13 +56,13 @@ Std yaz tab yap
 Hazır oluyor!
 
 
-C dosyası
+##C dosyası
 Gcc ile derlenir
 ./a.out yazdığın c kodunu yazdırıyor
 Norm tab yazı düzenleme
 
 
-Ex07
+##Ex07
 Patch < sw.diff
 Patch -R < sw.diff.rej
 patch ./a -o ./b < sw.diff
