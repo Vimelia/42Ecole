@@ -46,6 +46,10 @@ https://github.com/PandeoF1/42-piscine
 
 http://nigal.freeshell.org/42
 
+https://github.com/evgenkarlson/COMPLETED_PISCINE_C
+
+https://github.com/PandeoF1/42-piscine
+
 
 
 
