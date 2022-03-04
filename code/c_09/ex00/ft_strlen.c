@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/03 04:03:16 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/03/04 02:43:19 by vdegirme         ###   ########.tr       */
+/*   Created: 2022/03/04 06:46:51 by vdegirme          #+#    #+#             */
+/*   Updated: 2022/03/04 06:48:28 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+int	ft_strlen(char *str)
+{
+	int	i;
 
-void	ft_putchar(char c);
-void	ft_swap(int *a, int *b);
-void	ft_putstr(char *str);
-int		ft_strlen(char *str);
-int		ft_strcmp(char *s1, char *s2);
-
-#endif
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}

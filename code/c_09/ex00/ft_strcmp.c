@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/03 04:03:16 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/03/04 02:43:19 by vdegirme         ###   ########.tr       */
+/*   Created: 2022/03/04 06:49:23 by vdegirme          #+#    #+#             */
+/*   Updated: 2022/03/04 06:51:54 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+int	ft_strcmp(char *s1, char *s2)
+{
+	unsigned int	i;
 
-void	ft_putchar(char c);
-void	ft_swap(int *a, int *b);
-void	ft_putstr(char *str);
-int		ft_strlen(char *str);
-int		ft_strcmp(char *s1, char *s2);
-
-#endif
+	i = 0;
+	while (s1[i] == s2[i] && (s1[i] != '\0' || s2[i] != '\0'))
+		i++;
+	return (s1[i] - s2[i]);
+}

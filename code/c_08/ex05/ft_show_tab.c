@@ -6,54 +6,65 @@
 /*   By: vdegirme <vdegirme@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 21:30:32 by vdegirme          #+#    #+#             */
-/*   Updated: 2022/03/03 22:48:39 by vdegirme         ###   ########.tr       */
+/*   Updated: 2022/03/04 02:22:04 by vdegirme         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "ft_stock_str.h"
+#include <unistd.h>
+#include <stdlib.h>
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_puts(char *str)
+int	ft_strlen(char *arr)
 {
-	while (*str)
-		ft_putchar(*str++);
-	ft_putchar('\0');
+	int	i;
+
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
 }
 
 void	ft_putnbr(int nb)
 {
-	unsigned int	n;
-
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		nb = 147483648;
+	}
 	if (nb < 0)
 	{
 		ft_putchar('-');
-		n = -nb;
+		nb *= -1;
+	}
+	if (nb < 10)
+	{
+		ft_putchar(nb + '0');
+		return ;
 	}
 	else
-		n = nb;
-	if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		n %= 10;
-	}
-	ft_putchar(n + '0');
+		ft_putnbr(nb / 10);
+	ft_putnbr(nb % 10);
 }
 
 void	ft_show_tab(struct s_stock_str *par)
 {
-	if (!par)
-		return ;
-	while (par->str)
+	int	i;
+
+	i = 0;
+	while (par[i].str)
 	{
-		ft_puts(par->str);
-		ft_putnbr(par->size);
-		ft_putchar('\n');
-		ft_puts(par->copy);
-		par++;
+		write(1, par[i].str, ft_strlen(par[i].str));
+		write(1, "\n", 1);
+		ft_putnbr(par[i].size);
+		write(1, "\n", 1);
+		write(1, par[i].copy, ft_strlen(par[i].copy));
+		write(1, "\n", 1);
+		i++;
 	}
 }
